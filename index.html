@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Головоломка</title>
+  <meta name="description" content="Aframe-Material">
+  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+  <script
+    src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+  <script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
+  <script type="text/javascript">
+    AFRAME.ASSETS_PATH = "./assets";
+  </script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="qr_1" src="./assets/images/qr-code-1.png">
+      <img id="konami" src="./assets/images/konami.png">
+      <img id="base64" src="./assets/images/base64.png">
+      <img id="qrf_1" src="./assets/images/Slice1.png">
+      <img id="qrf_2" src="./assets/images/Slice2.png">
+      <img id="qrf_3" src="./assets/images/Slice3.png">
+    </a-assets>
+    <a-entity laser-controls="hand: right"></a-entity>
+
+    <a-entity>
+      <a-camera look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
+    </a-entity>
+
+    <a-keyboard></a-keyboard>
+
+    <a-rounded position="-3.3 0.5 -1.8a" width="4" height="3" radius="0.05" rotation="0 20 0" scale="0.5 0.5 0.5">
+      <a-form>
+        <a-input position="0.2 2.5 0" type="text" placeholder="Secret Key" color="black" width="1"
+          input="width:1.16;backgroundColor:#4c2f4a" scale="3 3 3" id="input1"></a-input>
+        <a-button position="0.2 2 0" name="stuff" value="Confirm" type="raised" id="button1"></a-button>
+      </a-form>
+    </a-rounded>
+    <a-rounded position="-1.1 0.5 -2.5" width="4" height="3" radius="0.05" rotation="0 0 0" scale="0.5 0.5 0.5">
+      <a-form>
+        <a-input position="0.2 2.5 0" type="text" placeholder="Secret Key" color="black" width="1"
+          input="width:1.16;backgroundColor:#4c2f4a" scale="3 3 3" id="input2" value=""></a-input>
+        <a-button position="0.2 2 0" name="stuff" value="Confirm" type="raised" id="button2"></a-button>
+      </a-form>
+    </a-rounded>
+    <a-rounded position="1.2 0.5 -2.5" width="4" height="3" radius="0.05" rotation="0 -20 0" scale="0.5 0.5 0.5">
+      <a-form>
+        <a-input position="0.2 2.5цф 0" type="text" placeholder="Secret Key" color="black" width="1"
+          input="width:1.16;backgroundColor:#4c2f4a" scale="3 3 3" id="input3"></a-input>
+        <a-button position="0.2 2 0" name="stuff" value="Confirm" type="raised" id="button3"></a-button>
+      </a-form>
+    </a-rounded>
+
+    <a-plane position="-2 1.1 -2.2" rotation="0 20 0" width="4" height="4" color="#fff" geometry="width: 1; height: 1w"
+      material="src: #base64" static-body>
+    </a-plane>
+    <a-plane position="0.25s 1.1 -2.4" rotation="0 0 0" width="4" height="4" color="#fff"
+      geometry="width: 1; height: 1w" material="src: #konami" static-body>
+    </a-plane>
+    <a-plane position="2.5 1.1 -2.041" rotation="0 160 0" width="4" height="4" color="#fff" geometry="height:1;width:1"
+      material="src: #qr_1">
+    </a-plane>
+
+
+    <a-box position="-1.008 -2.75 4.604" rotation="0 30 0" color="#d2fe67" geometry="height:3.46" id="box1">
+      <a-animation attribute="position" dur="7000" fill="forwards" to="-1.008 1.706 4.604" direction="alternate"
+        repeat="0" begin="animateBox1">
+      </a-animation>
+    </a-box>
+    <a-box position="2.318 -3 5.44" rotation="0 60 0" color="#d2fe67" geometry="height:3.46" id="box2">
+      <a-animation attribute="position" dur="7000" fill="forwards" to="2.318 1.787 5.44" direction="alternate"
+        repeat="0" begin="animateBox2">
+      </a-animation>
+    </a-box>
+    <a-box position="4.225 -3 8.639" rotation="0 45 0" color="#d2fe67" geometry="height:3.46" scale="1.1 1.1 1.1"
+      id="box3">
+      <a-animation attribute="position" dur="7000" fill="forwards" to="4.225 1.802 8.639" direction="alternate"
+        repeat="0" begin="animateBox3">
+      </a-animation>
+    </a-box>
+
+    <a-plane position="-0.949 -2,816 3.991" rotation="0 -150 0" width="4" height="4" color="#fff"
+      geometry="height:3;width:1" scale="0.3 0.3 0.3" material="src: #qrf_3" id="qrf1">
+      <a-animation attribute="position" dur="7000" fill="forwards" to="-0.949 1.64 3.991" direction="alternate"
+        repeat="0" begin="animateQrf1">
+      </a-animation>
+    </a-plane>
+    <a-plane position="1.786 -3.105 5.35" rotation="0 -120 0" width="4" height="4" color="#fff"
+      geometry="height:3;width:1" scale="0.65 0.65 0.65" material="src: #qrf_1" id="qrf2">
+      <a-animation attribute="position" dur="7000" fill="forwards" to="1.786 1.682 5.35" direction="alternate"
+        repeat="0" begin="animateQrf2">
+      </a-animation>
+    </a-plane>
+    <a-plane position="3.836 -3.105 8.239" rotation="0 -135 0" width="4" height="4" color="#fff"
+      geometry="height:3;width:1" scale="1.07 1.07 1.07" material="src: #qrf_2" id="qrf3">
+      <a-animation attribute="position" dur="7000" fill="forwards" to="3.836 1.749 8.239" direction="alternate"
+        repeat="0" begin="animateQrf3">
+      </a-animation>
+    </a-plane>
+
+    <a-plane position="0 -0.97 0" rotation="-90 0 0" width="4" height="4" geometry="height:30;width:30" static-body=""
+      material="color:#8473b5">
+    </a-plane>
+    <a-plane position="-15.019 4.404 0" rotation="180 90 90" width="4" height="4" geometry="height:30;width:15"
+      static-body="" material="color:#8473b5">
+      <a-text value="Ahaha NE TA STENA :)" position="-1.655 0.048 0.054" align="center" width="6" color="#362640"
+        font="https://cdn.aframe.io/fonts/mozillavr.fnt" scale="10 10 1" rotation="0 0 90">
+      </a-text>
+    </a-plane>
+    <a-plane position="15.045 4.404 0" rotation="180 -90 90" width="4" height="4" geometry="height:30;width:15"
+      static-body="" material="color:#8473b5">
+      <a-text value="Ahaha NE TA STENA :)" position="-1.655 0.048 0.054" align="center" width="6" color="#362640"
+        font="https://cdn.aframe.io/fonts/mozillavr.fnt" scale="10 10 1" rotation="0 0 90">
+      </a-text>
+    </a-plane>
+    <a-plane position="0.079 4.404 -15.047" rotation="180 0 90" width="4" height="4" geometry="height:30;width:15"
+      static-body="" material="color:#8473b5">
+      <a-text value="Ahaha NE TA STENA :)" position="-1.655 0.048 0.054" align="center" width="6" color="#362640"
+        font="https://cdn.aframe.io/fonts/mozillavr.fnt" scale="10 10 1" rotation="0 0 90">
+      </a-text>
+    </a-plane>
+    <a-plane position="0.079 4.404 15.03" rotation="180 180 90" width="4" height="4" geometry="height:30;width:15"
+      static-body="" material="color:#8473b5">
+      <a-text value="MOLODEC! SECRET KEY:" position="-1.655 0.048 0.054" align="center" width="6" color="#362640"
+        font="https://cdn.aframe.io/fonts/mozillavr.fnt" scale="10 10 1" rotation="0 0 90">
+      </a-text>
+      <a-text value="'secretkey'" position="0.694 0.048 0.054" align="center" width="6" color="#362640"
+        font="https://cdn.aframe.io/fonts/mozillavr.fnt" scale="10 10 1" rotation="0 0 90">
+      </a-text>
+      <a-text value="Da imenno ON!" position="3.218 0.048 0.054" align="center" width="6" color="#362640"
+        font="https://cdn.aframe.io/fonts/mozillavr.fnt" scale="10 10 1" rotation="0 0 90">
+      </a-text>
+    </a-plane>
+
+
+    <a-entity position="0 -4.7 -2.7" id="arrow">
+      <a-cylinder position="0 2.962 -1.203" radius="0.1" height="2" color="white" rotation="90 90 90"></a-cylinder>
+      <a-cylinder position="0.412 2.972 -0.652" radius="0.05" height="0.5" rotation="45 45 90" material="color:white"
+        geometry="height:1.140;radius:0.1">
+      </a-cylinder>
+      <a-cylinder position="-0.42 2.972 -0.658" radius="0.05" height="0.5" rotation="45 -45 90" material="color:whitea"
+        geometry="height:1.140;radius:0.1">
+      </a-cylinder>
+      <a-animation attribute="position" dur="1000" fill="forwards" to="0 2 -2.7" direction="alternate" repeat="0"
+        begin="animateArrow">
+      </a-animation>
+    </a-entity>
+
+    <a-toast message="INCORRECT KEY" action="OK :(" autoshow="false"></a-toast>
+
+
+    <a-gradient-sky material="shader: gradient; topColor: 17 18 21 ; bottomColor: 25 26 30;"></a-gradient-sky>
+  </a-scene>
+
+  <script type="text/javascript">
+    const toast = document.querySelector('a-toast');
+    const keyboard = document.querySelector('a-keyboard');
+    const input1 = document.querySelector('#input1');
+    const input2 = document.querySelector('#input2');
+    const input3 = document.querySelector('#input3');
+    const arrow = document.querySelector('#arrow');
+    const button1 = document.querySelector('#button1');
+    const button2 = document.querySelector('#button2');
+    const button3 = document.querySelector('#button3');
+    const box1 = document.querySelector('#box1');
+    const box2 = document.querySelector('#box2');
+    const box3 = document.querySelector('#box3');
+    const qrf1 = document.querySelector('#qrf1');
+    const qrf2 = document.querySelector('#qrf2');
+    const qrf3 = document.querySelector('#qrf3');
+
+    let isArrowSuccess = false;
+    let isBlockOneSuccess = false;
+    let isBlockTwoSuccess = false;
+    let isBlockThreeSuccess = false;
+
+    toast.addEventListener('actionclick', () => {
+      toast.hide();
+    })
+
+    button1.addEventListener('click', () => {
+      if (input1.value === '1991') {
+        isArrowSuccess ? null : arrow.emit('animateArrow');
+        isArrowSuccess = true;
+        isBlockOneSuccess ? null : box1.emit('animateBox1');
+        isBlockOneSuccess ? null : qrf1.emit('animateQrf1');
+        isBlockOneSuccess = true;
+      } else {
+        toast.show();
+      }
+    })
+
+    button2.addEventListener('click', () => {
+      if (input2.value.toLocaleLowerCase() === 'uuddlrlrba') {
+        isArrowSuccess ? null : arrow.emit('animateArrow');
+        isArrowSuccess = true;
+        isBlockTwoSuccess ? null : box2.emit('animateBox2');
+        isBlockTwoSuccess ? null : qrf2.emit('animateQrf2');
+        isBlockTwoSuccess = true;
+      } else {
+        toast.show();
+      }
+    })
+
+    button3.addEventListener('click', () => {
+      if (input3.value === 'secretkey') {
+        isArrowSuccess ? null : arrow.emit('animateArrow');
+        isArrowSuccess = true;
+        isBlockThreeSuccess ? null : box3.emit('animateBox3');
+        isBlockThreeSuccess ? null : qrf3.emit('animateQrf3');
+        isBlockThreeSuccess = true;
+      } else {
+        toast.show();
+      }
+    })
+
+    input1.addEventListener('change', (e) => {
+      console.log(e.target);
+    })
+
+  </script>
+
+</body>
+
+</html>
